@@ -1,0 +1,27 @@
+# An example of ClusterConfig object specifying subnets for a nodegroup
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: poc-cluster
+  region: us-east-2
+
+vpc:
+  id: vpc-0dba03bf6e5cac583
+  cidr: "10.26.0.0/24"
+  subnets:
+    private:
+      us-east-2a:
+        cidr: "10.26.0.128/26"
+      us-east-2b:
+        cidr: "10.26.0.192/26"
+
+nodeGroups:
+  - name: pool-1
+    instanceType: m5.xlarge
+    desiredCapacity: 1
+    privateNetworking: true
+    availabilityZones: ['us-east-2a']
+    labels:
+      type: poc

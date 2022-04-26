@@ -1,0 +1,40 @@
+apiVersion: apigatewayv2.services.k8s.aws/v1alpha1
+kind: API
+metadata:
+  name: apitest-private-nlb
+spec:
+  body: '{
+              "openapi": "3.0.1",
+              "info": {
+                "title": "ack-apigwv2-import-test-private-nlb",
+                "version": "v1"
+              },
+              "paths": {
+              "/$default": {
+                "x-amazon-apigateway-any-method" : {
+                "isDefaultRoute" : true,
+                "x-amazon-apigateway-integration" : {
+                "payloadFormatVersion" : "1.0",
+                "connectionId" : "qbbxho",
+                "type" : "http_proxy",
+                "httpMethod" : "GET",
+                "uri" : "arn:aws:elasticloadbalancing:us-east-2:060763902421:listener/net/k8s-default-authorse-73f005dc14/682e983bf231c9b0/63c82296779f53d0",
+               "connectionType" : "VPC_LINK"
+                  }
+                }
+              },
+              "/meta": {
+                  "get": {
+                    "x-amazon-apigateway-integration": {
+                       "uri" : "arn:aws:elasticloadbalancing:us-east-2:060763902421:listener/net/k8s-default-echoserv-3ed44af183/fb4a5d02d1fffb35/6d686d87efe67cee",
+                      "httpMethod": "GET",
+                      "connectionId": "qbbxho",
+                      "type": "HTTP_PROXY",
+                      "connectionType": "VPC_LINK",
+                      "payloadFormatVersion": "1.0"
+                    }
+                  }
+                }
+              },
+              "components": {}
+        }'
