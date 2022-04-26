@@ -1,0 +1,32 @@
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "IAMFullAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/IAMFullAccess"
+        },
+        {
+            "PolicyName": "AmazonS3FullAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+        },
+        {
+            "PolicyName": "AmazonAPIGatewayAdministrator",
+            "PolicyArn": "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"
+        },
+        {
+            "PolicyName": "AmazonSSMFullAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
+        },
+        {
+            "PolicyName": "AmazonVPCFullAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
+        },
+        {
+            "PolicyName": "eksctl",
+            "PolicyArn": "arn:aws:iam::060763902421:policy/eksctl"
+        },
+        {
+            "PolicyName": "AWSLambda_FullAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AWSLambda_FullAccess"
+        }
+    ]
+}
